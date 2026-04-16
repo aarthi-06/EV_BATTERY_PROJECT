@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #fff;
+}
+
+/* Container */
+.app-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+/* Cards */
+.battery-form,
+.result-card,
+.chart-card,
+.summary-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* FORM */
+.battery-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.battery-form h2 {
+  grid-column: 1 / -1;
+}
+
+.battery-form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.battery-form button {
+  grid-column: 1 / -1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.battery-form button:hover {
+  background: #1d4ed8;
+}
+
+/* RESULT */
+.result-card {
+  text-align: center;
+}
+
+.rul {
+  font-size: 42px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.status {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* SUMMARY */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.summary-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 14px 16px;
+  border-radius: 12px;
+  min-height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.summary-label {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.summary-value {
+  font-size: 18px;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+/* ----------------------------- */
+/* 📱 MOBILE RESPONSIVE */
+/* ----------------------------- */
+
+@media (max-width: 768px) {
+  .app-container {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  /* FORM becomes single column */
+  .battery-form {
+    grid-template-columns: 1fr;
+  }
+
+  .battery-form button {
+    font-size: 15px;
+  }
+
+  /* Smaller result text */
+  .rul {
+    font-size: 32px;
+  }
+
+  /* Summary grid tighter */
+  .summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Very small phones */
+
+  .title {
+    font-size: 22px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rul {
+    font-size: 28px;
+  }
+
+  .battery-form input {
+    font-size: 14px;
+    padding: 9px;
+  }
+}
